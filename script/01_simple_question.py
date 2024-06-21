@@ -26,7 +26,10 @@ class TaskParser():
         Returns:
             str: 理解した内容
         """
-        openai.api_key = self.api_key
+        print(f"次の文章から，お客さんがどんな動作を求めているかを出力してください：{order_txt}")
+        print("実施可能なスキルには，[order]，[clean]，[explain]，[talk]，[done]があります．")
+
+        # GPTの推論部
         response = self.client.chat.completions.create(
             model=self.gpt_version,
             messages=[
@@ -43,6 +46,7 @@ class TaskParser():
 
         answer = response.choices[0].message.content
         answer = answer[1:-1]
+
         print("=============== show all result ==============\n")
         print(response.choices)
 
