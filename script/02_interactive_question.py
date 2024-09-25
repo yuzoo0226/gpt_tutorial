@@ -6,7 +6,7 @@ import sys
 import openai
 
 
-class TaskParser():
+class InteractiveQuestion():
     def __init__(self) -> None:
         # 環境変数からAPIキーを取得
         self.api_key = os.environ.get("OPENAI_API")
@@ -64,6 +64,6 @@ class TaskParser():
 
 
 if __name__ == "__main__":
-    cls = TaskParser()
+    cls = InteractiveQuestion()
     print("サービスロボットとの会話を楽しむプログラム，qで終了できます．")
     cls.chat()

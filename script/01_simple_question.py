@@ -6,7 +6,7 @@ import sys
 import openai
 
 
-class TaskParser():
+class SimpleQuestion():
     def __init__(self) -> None:
         # 環境変数からAPIキーを取得
         self.api_key = os.environ.get("OPENAI_API")
@@ -58,5 +58,5 @@ class TaskParser():
 
 if __name__ == "__main__":
     text = "スイーツをください．"
-    cls = TaskParser()
+    cls = SimpleQuestion()
     cls.action_parser(text)

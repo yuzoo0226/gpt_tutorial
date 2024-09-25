@@ -7,7 +7,7 @@ import base64
 import openai
 
 
-class TaskParser():
+class ImageQuestion():
     def __init__(self) -> None:
         # 環境変数からAPIキーを取得
         self.api_key = os.environ.get("OPENAI_API")
@@ -82,5 +82,5 @@ class TaskParser():
 
 
 if __name__ == "__main__":
-    cls = TaskParser()
+    cls = ImageQuestion()
     cls.chat()
